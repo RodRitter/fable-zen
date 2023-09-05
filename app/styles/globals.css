@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 29, 29, 29;
+  --background-rgb: 246, 246, 246;
+  --background-img: url("../../public/img/bg-light.png");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 246, 244, 239;
+    --background-rgb: 82, 56, 36;
+    --background-img: url("../../public/img/bg-dark.png");
+  }
+} */
+
+main[data-theme="light"] {
+  --foreground-rgb: 29, 29, 29;
+  --foreground-alt-rgb: 246, 246, 246;
+  --background-rgb: 246, 246, 246;
+  --background-img: url("../../public/img/bg-light.png");
+
+  --panel-bg-rgb: 210, 210, 210;
+  --panel-border-rgb: 190, 190, 190;
+  --primary-rgb: 202, 147, 0;
+  --secondary-rgb: 160, 160, 160;
+}
+
+main[data-theme="dark"] {
+  --foreground-rgb: 246, 244, 239;
+  --foreground-alt-rgb: 62, 46, 0;
+  --background-rgb: 28, 26, 25;
+  --background-img: url("../../public/img/bg-dark.png");
+
+  --panel-bg-rgb: 31, 31, 31;
+  --panel-border-rgb: 62, 62, 62;
+  --primary-rgb: 238, 193, 72;
+  --secondary-rgb: 100, 100, 100;
+}
+
+main {
+  overflow: auto;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  transition: background-image 0.1s linear;
+}
+
+.bg-primary {
+  background: rgb(var(--primary-rgb));
+}
+
+.bg-secondary {
+  background: rgb(var(--secondary-rgb));
+}
+
+.panel {
+  background: rgb(var(--panel-bg-rgb));
+  border: 1px solid rgb(var(--panel-border-rgb));
+}
+
+.container-narrow {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.button-switch > div {
+  border: 1px solid rgb(var(--secondary-rgb));
+}
+
+.button-switch > div > div {
+  border-right: 1px solid rgb(var(--secondary-rgb));
+}
+
+.button-switch > div > div:last-child {
+  border: none;
+}
+
+.button-switch button.active {
+  background: rgb(var(--primary-rgb));
+  color: rgb(var(--foreground-alt-rgb));
+}
+
+.toggle-switch > div {
+  background: rgb(var(--panel-bg-rgb));
+  border: 1px solid rgb(var(--secondary-rgb));
+}
+
+.toggle-switch .pill {
+  background: rgb(var(--secondary-rgb));
+}
+
+.toggle-switch.toggled .pill {
+  background: rgb(var(--primary-rgb));
+}
+
+.button {
+  background: rgb(var(--primary-rgb));
+  color: rgb(var(--foreground-alt-rgb));
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0 10px;
+  transition: opacity linear 0.1s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button.outline {
+  background: transparent;
+  border: 1px solid rgb(var(--primary-rgb));
+}
+
+.button.outline > * {
+  color: rgb(var(--primary-rgb));
+}
+
+@import url("typography.css");
