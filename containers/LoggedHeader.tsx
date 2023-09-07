@@ -9,7 +9,11 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "@/components/elements/Avatar";
 import ReaderTools from "@/components/elements/ReaderTools";
 
-const MainHeader = () => {
+interface Props {
+  readerTools?: boolean;
+}
+
+const LoggedHeader = ({ readerTools }: Props) => {
   // @ts-ignore
   const { theme, setTheme } = useTheme();
 
@@ -25,7 +29,7 @@ const MainHeader = () => {
       </Link>
 
       <div className="flex items-center justify-end gap-2">
-        <ReaderTools />
+        {readerTools && <ReaderTools />}
         <div>
           {theme && (
             <ToggleSwitch
@@ -47,4 +51,4 @@ const MainHeader = () => {
   );
 };
 
-export default MainHeader;
+export default LoggedHeader;

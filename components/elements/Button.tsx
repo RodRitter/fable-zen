@@ -1,21 +1,22 @@
 import React from "react";
+import { Button as MuiButton } from "@mui/base";
 
 interface Props {
-  children?: React.ReactElement | string;
+  children?: React.ReactElement | React.ReactElement[] | string;
   kind?: string;
   onClick?: Function;
 }
 
 const Button = ({ children, kind, onClick }: Props) => {
   return (
-    <button
+    <MuiButton
       className={`button ${kind ? kind : ""} h-[36px] px-2 rounded-sm`}
-      onClick={() => {
-        if (onClick) onClick();
+      onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+        if (onClick) onClick(event);
       }}
     >
-      {children}
-    </button>
+      <span>{children}</span>
+    </MuiButton>
   );
 };
 

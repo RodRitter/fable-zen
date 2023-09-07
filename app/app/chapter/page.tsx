@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import MainHeader from "@/containers/MainHeader";
-import ReaderTools from "@/components/elements/ReaderTools";
+import LoggedHeader from "@/containers/LoggedHeader";
 
 const Chapter = () => {
   return (
     <div className="mt-6 min-h-screen container mx-auto">
-      <MainHeader />
+      <LoggedHeader readerTools />
       <div className="mt-8">
         <h1 className="text-center opacity-50 mb-2">Chapter 1</h1>
         <h2 className="text-center">Land of the Lost</h2>

@@ -69,23 +69,6 @@ main {
   margin: 0 auto;
 }
 
-.button-switch > div {
-  border: 1px solid rgb(var(--secondary-rgb));
-}
-
-.button-switch > div > div {
-  border-right: 1px solid rgb(var(--secondary-rgb));
-}
-
-.button-switch > div > div:last-child {
-  border: none;
-}
-
-.button-switch button.active {
-  background: rgb(var(--primary-rgb));
-  color: rgb(var(--foreground-alt-rgb));
-}
-
 .toggle-switch > div {
   background: rgb(var(--panel-bg-rgb));
   border: 1px solid rgb(var(--secondary-rgb));
@@ -104,8 +87,8 @@ main {
   color: rgb(var(--foreground-alt-rgb));
   font-size: 0.9rem;
   font-weight: 500;
-  padding: 0 10px;
   transition: opacity linear 0.1s;
+  border: none;
 }
 
 .button:hover {
@@ -119,6 +102,23 @@ main {
 
 .button.outline > * {
   color: rgb(var(--primary-rgb));
+}
+
+.button-switch > div {
+  border: 1px solid rgb(var(--secondary-rgb));
+}
+
+.button-switch > div > div {
+  border-right: 1px solid rgb(var(--secondary-rgb));
+}
+
+.button-switch > div > div:last-child {
+  border: none;
+}
+
+.button-switch button.active {
+  background: rgb(var(--primary-rgb));
+  color: rgb(var(--foreground-alt-rgb));
 }
 
 @import url("typography.css");
