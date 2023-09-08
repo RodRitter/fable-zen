@@ -18,7 +18,7 @@ const SelectGroup = ({ options }: Props) => {
       {options.map((option) => (
         <button key={option.name} className="relative w-[30px] h-[50px]">
           <FontAwesomeIcon icon={option.icon} size="lg" />
-          <div className="absolute bottom-0 left-0 right-0 h-[5px] bg-secondary"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-[5px]"></div>
         </button>
       ))}
     </div>

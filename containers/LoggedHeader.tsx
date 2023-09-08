@@ -33,8 +33,8 @@ const LoggedHeader = ({ readerTools }: Props) => {
         <div>
           {theme && (
             <ToggleSwitch
-              iconStart={faMoon}
-              iconEnd={faSun}
+              iconStart={faSun}
+              iconEnd={faMoon}
               onToggle={(toggled: boolean) =>
                 setTheme(toggled ? "light" : "dark")
               }

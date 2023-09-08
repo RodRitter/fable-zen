@@ -2,10 +2,11 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 
-const WIDTH = 60;
-const HEIGHT = 30;
+const WIDTH = 42;
+const HEIGHT = 24;
 const LG_WIDTH = 60;
-const LG_HEIGHT = 36;
+const LG_HEIGHT = 30;
+const PADDING = 8;
 
 interface Props {
   label?: string;
@@ -32,7 +33,7 @@ const ToggleSwitch = ({
   const [height, setHeight] = useState(HEIGHT);
 
   useEffect(() => {
-    if (large) {
+    if (large || iconStart || iconEnd) {
       setWidth(LG_WIDTH);
       setHeight(LG_HEIGHT);
     }
@@ -79,9 +80,11 @@ const ToggleSwitch = ({
         <div
           className={`pill bg-white rounded-full absolute top-1/2 -translate-y-1/2`}
           style={{
-            height: `${height - 10}px`,
-            width: `${height - 10}px`,
-            left: toggled ? `${width - (height - 10) - 5}px` : `5px`,
+            height: `${height - PADDING}px`,
+            width: `${height - PADDING}px`,
+            left: toggled
+              ? `${width - (height - PADDING) - PADDING / 2}px`
+              : `${PADDING / 2}px`,
             transition: "left ease-out 0.1s",
           }}
         ></div>
@@ -90,15 +93,15 @@ const ToggleSwitch = ({
         {(iconStart || iconEnd) && (
           <div className="absolute left-2 right-2 top-0 bottom-0 flex items-center justify-between">
             <div
-              className={`icon-start w-[${height - 10}px] h-[${
-                height - 10
+              className={`icon-start w-[${height - PADDING}px] h-[${
+                height - PADDING
               }px] transition-all ${!toggled ? "opacity-0" : ""}`}
             >
               {iconStart && <FontAwesomeIcon icon={iconStart} />}
             </div>
             <div
-              className={`icon-end w-[${height - 10}px] h-[${
-                height - 10
+              className={`icon-end w-[${height - PADDING}px] h-[${
+                height - PADDING
               }px] transition-all ${toggled ? "opacity-0" : ""}`}
             >
               {iconEnd && <FontAwesomeIcon icon={iconEnd} />}

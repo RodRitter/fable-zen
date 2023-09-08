@@ -16,31 +16,67 @@
   }
 } */
 
-main[data-theme="light"] {
+body[data-theme="light"] {
+  /* Main Theme */
   --foreground-rgb: 29, 29, 29;
   --foreground-alt-rgb: 246, 246, 246;
   --background-rgb: 246, 246, 246;
   --background-img: url("../../public/img/bg-light.png");
 
+  /* Buttons */
+  --button-bg-rgb: 29, 29, 29;
+  --button-fg-rgb: 240, 240, 240;
+  --button-alt-bg-rgb: 240, 240, 240;
+  --button-alt-fg-rgb: 29, 29, 29;
+
+  /* Modals & Panels */
   --panel-bg-rgb: 210, 210, 210;
   --panel-border-rgb: 190, 190, 190;
-  --primary-rgb: 202, 147, 0;
+
+  /* Toggle Switch */
+  --toggle-pill-rgb: 240, 240, 240;
+  --toggle-active-rgb: 46, 46, 50;
+  --toggle-inactive-rgb: 210, 210, 210;
+  --toggle-icon-start-rgb: 240, 240, 240;
+  --toggle-icon-end-rgb: 46, 46, 50;
+  --toggle-border-rgb: 140, 140, 140;
+
+  --primary-rgb: 46, 46, 50;
   --secondary-rgb: 160, 160, 160;
+  --white-rgb: 240, 240, 240;
 }
 
-main[data-theme="dark"] {
+body[data-theme="dark"] {
   --foreground-rgb: 246, 244, 239;
   --foreground-alt-rgb: 62, 46, 0;
   --background-rgb: 28, 26, 25;
   --background-img: url("../../public/img/bg-dark.png");
 
+  /* Buttons */
+  --button-bg-rgb: 247, 186, 3;
+  --button-fg-rgb: 62, 46, 0;
+  --button-alt-bg-rgb: 240, 240, 240;
+  --button-alt-fg-rgb: 247, 186, 3;
+
+  /* Modals & Panels */
   --panel-bg-rgb: 31, 31, 31;
   --panel-border-rgb: 62, 62, 62;
-  --primary-rgb: 238, 193, 72;
+
+  /* Toggle Switch */
+  --toggle-pill-rgb: 240, 240, 240;
+  --toggle-active-rgb: 247, 186, 3;
+  --toggle-inactive-rgb: 31, 31, 31;
+  --toggle-icon-start-rgb: 240, 240, 240;
+  --toggle-icon-end-rgb: 46, 46, 50;
+  --toggle-border-rgb: 62, 62, 62;
+
+  --primary-rgb: 247, 186, 3;
   --secondary-rgb: 100, 100, 100;
+  --white-rgb: 240, 240, 240;
 }
 
-main {
+/* Main Theme */
+body {
   overflow: auto;
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
@@ -49,14 +85,6 @@ main {
   background-position: center top;
   background-attachment: fixed;
   transition: background-image 0.1s linear;
-}
-
-.bg-primary {
-  background: rgb(var(--primary-rgb));
-}
-
-.bg-secondary {
-  background: rgb(var(--secondary-rgb));
 }
 
 .panel {
@@ -70,21 +98,30 @@ main {
 }
 
 .toggle-switch > div {
-  background: rgb(var(--panel-bg-rgb));
-  border: 1px solid rgb(var(--secondary-rgb));
+  background: rgb(var(--toggle-inactive-rgb));
+  border: 1px solid rgb(var(--toggle-border-rgb));
+  transition: background-color linear 0.1s;
 }
 
 .toggle-switch .pill {
-  background: rgb(var(--secondary-rgb));
+  background: rgb(var(--toggle-pill-rgb));
 }
 
-.toggle-switch.toggled .pill {
-  background: rgb(var(--primary-rgb));
+.toggle-switch.toggled > div {
+  background: rgb(var(--toggle-active-rgb));
+}
+
+.toggle-switch.toggled .icon-start {
+  color: rgb(var(--toggle-icon-start-rgb));
+}
+
+.toggle-switch.toggled .icon-end {
+  color: rgb(var(--toggle-icon-end-rgb));
 }
 
 .button {
-  background: rgb(var(--primary-rgb));
-  color: rgb(var(--foreground-alt-rgb));
+  background: rgb(var(--button-bg-rgb));
+  color: rgb(var(--button-fg-rgb));
   font-size: 0.9rem;
   font-weight: 500;
   transition: opacity linear 0.1s;
@@ -97,11 +134,12 @@ main {
 
 .button.outline {
   background: transparent;
-  border: 1px solid rgb(var(--primary-rgb));
+  /* border: 1px solid rgb(var(--button-alt-fg-rgb)); */
+  color: rgb(var(--button-alt-fg-rgb));
 }
 
 .button.outline > * {
-  color: rgb(var(--primary-rgb));
+  color: rgb(var(---button-alt-fg-rgb));
 }
 
 .button-switch > div {
